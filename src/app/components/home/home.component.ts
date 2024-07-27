@@ -25,9 +25,13 @@ export class HomeComponent {
   getProductos():void{
     this._productoService.getAllProducts().subscribe(
       (data: Producto[]) => {
-          console.log(data);
+          //console.log(data);
           this.productos = data;
-        });
+        },
+      (error: any) => {
+        console.error('Error:', error);
+      }
+      )
   }
 
   constructor(){

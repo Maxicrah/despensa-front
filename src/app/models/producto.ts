@@ -3,7 +3,7 @@ export class Producto {
     id_producto!: Number;
     nombre !:String;
     descripcion!:String;
-    precio!: Number;
+    precio!: number;
     imagen!:String;
     costo_adquisicion!:Number;
     fecha_vencimiento!:Date;
@@ -12,6 +12,7 @@ export class Producto {
     stock!:Number;
     promocion!:String;
     notas_adicionales!:String;
+    //categoria!: Categoria;
     // lista_ventas!:Array<Venta>
     // proveedores!:Array<Proveedor>;
 }

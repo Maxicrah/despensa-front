@@ -1,10 +1,15 @@
 /* Ajustes generales */
 body {
-    padding-top: 100px; /* Ajusta el valor según la altura del navbar */
+    padding-top: 100px; 
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
+    /*background-image: url('assets/logos.png'); /* Cambia esto a la ruta de tu imagen */
+    /*background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    /*background-position: center; /* Centra la imagen */
+    /*background-repeat: no-repeat; /* Evita que la imagen se repita */
   }
   
   router-outlet {
