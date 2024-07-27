@@ -1,1 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ajustes generales */
+body {
+    padding-top: 100px; /* Ajusta el valor según la altura del navbar */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  router-outlet {
+    flex: 1;
+  }
+  
+  /* Estilos del navbar */
+  .navbar-brand {
+    font-weight: 500;
+    color: #009970;
+    font-size: 24px;
+    transition: 0.3s color;
+  }
+  
+  .navbar {
+    background-color: #fff;
+    height: 80px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+  }
+  
+  .login-button {
+    background-color: #009970;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+  }
+  
+  .login-button:hover {
+    background-color: #00b383;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+  }
+  
+  .navbar-toggler:focus,
+  .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: #000;
+  }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #009970;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::before,
+  .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+  }
+  
+  /* Estilos del footer */
+  footer {
+    margin-top: auto; /* Empuja el footer al fondo de la página */
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  

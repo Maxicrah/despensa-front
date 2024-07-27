@@ -1,0 +1,24 @@
+.footer {
+    background-color: #f8f9fa;
+    color: #666777;
+  }
+  
+  .footer a {
+    color: #009970;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer a:hover {
+    color: #00b383;
+  }
+  
+  .footer h5 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

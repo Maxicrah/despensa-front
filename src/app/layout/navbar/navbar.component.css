@@ -1,4 +1,19 @@
-.login-button{
+.navbar-brand {
+    font-weight: 500;
+    color: #009970;
+    font-size: 24px;
+    transition: 0.3s color;
+  }
+  
+  .navbar {
+    background-color: #fff;
+    height: 80px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    z-index: 1000; /* Ensure the navbar is above other elements */
+  }
+  
+  .login-button {
     background-color: #009970;
     color: #fff;
     font-size: 14px;
@@ -6,27 +21,35 @@
     border-radius: 50px;
     text-decoration: none;
     transition: 0.3s background-color;
-}
-.login-button:hover{
+  }
+  
+  .login-button:hover {
     background-color: #00b383;
-}
-.navbar-toggler{
+  }
+  
+  .navbar-toggler {
     border: none;
     font-size: 1.25rem;
-}
-.navbar-toggler:focus, .btn-close:focus{
+  }
+  
+  .navbar-toggler:focus,
+  .btn-close:focus {
     box-shadow: none;
     outline: none;
-}
-.nav-link{
+  }
+  
+  .nav-link {
     color: #666777;
     font-weight: 500;
     position: relative;
-}
-.nav-link:hover, .nav-link.active{
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
     color: #000;
-}
-.nav-link::before{
+  }
+  
+  .nav-link::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -37,8 +60,13 @@
     background-color: #009970;
     visibility: hidden;
     transition: 0.3s ease-in-out;
-}
-.nav-link:hover::before, .nav-link.active::before{
+  }
+  
+  .nav-link:hover::before,
+  .nav-link.active::before {
     width: 100%;
     visibility: visible;
-}
+  }
+  
+ 
+  
