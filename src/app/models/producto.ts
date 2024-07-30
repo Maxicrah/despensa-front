@@ -1,17 +1,17 @@
 export class Producto {
     //nombre!: String;
-    id_producto!: Number;
-    nombre !:String;
-    descripcion!:String;
+    id_producto!: number;
+    nombre !:string;
+    descripcion!:string;
     precio!: number;
-    imagen!:String;
-    costo_adquisicion!:Number;
+    imagen!:string;
+    costo_adquisicion!:number;
     fecha_vencimiento!:Date;
-    fecha_ingres!:Date;
-    marca!:String;
-    stock!:Number;
-    promocion!:String;
-    notas_adicionales!:String;
+    fecha_ingreso!:Date;
+    marca!:string;
+    stock!:number;
+    promocion!:string;
+    notas_adicionales!:string;
     //categoria!: Categoria;
     // lista_ventas!:Array<Venta>
     // proveedores!:Array<Proveedor>;

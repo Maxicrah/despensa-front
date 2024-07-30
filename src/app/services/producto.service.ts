@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Producto } from '../models/producto';
 
 @Injectable({
@@ -17,6 +17,36 @@ export class ProductoService {
     return this._httpClient.get<Producto[]>(this.apiURL + 'traer');
   }
 
+  // createProduct(product: Producto, file: File): Observable<any> {
+  //   const formData = new FormData();
+  //   formData.append('product', JSON.stringify(product));
+  //   formData.append('file', file);
 
-  constructor() { }
+  //   return this._httpClient.post<any>(this.apiURL + 'crear', formData);
+  // }
+
+  // createProduct(formData: FormData): Observable<any> {
+  //   return this._httpClient.post<any>(this.apiURL + 'crear', formData);
+  // }
+
+  createProducto(producto: Producto, imagen: File): Observable<Producto> {
+    const formData: FormData = new FormData();
+    formData.append('nombre', producto.nombre);
+    formData.append('descripcion', producto.descripcion);
+    formData.append('precio', producto.precio.toString());
+    formData.append('costo_adquisicion', producto.costo_adquisicion.toString());
+     // Asegúrate de que `fecha_vencimiento` sea un objeto `Date`
+     const fechaVencimiento = new Date(producto.fecha_vencimiento);
+     formData.append('fecha_vencimiento', fechaVencimiento.toISOString().split('T')[0]);
+    const fechaIngreso = new Date(producto.fecha_ingreso); 
+    formData.append('fecha_ingreso', producto.fecha_ingreso.toISOString().split('T')[0]);
+    formData.append('marca', producto.marca);
+    formData.append('stock', producto.stock.toString());
+    formData.append('promocion', producto.promocion);
+    formData.append('notas_adicionales', producto.notas_adicionales);
+    formData.append('imagen', imagen);
+
+    return this._httpClient.post<Producto>(`${this.apiURL}crear`, formData);
+  }
+
 }
