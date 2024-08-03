@@ -28,7 +28,7 @@ export class FormProductoComponent {
     this.productForm = this.fb.group({
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
-      precio: [null, [Validators.required, Validators.min(0)]],
+      precio: [{ value: null, disabled: true }, [Validators.required, Validators.min(0)]],
       imagen: [null, Validators.required],
       costo_adquisicion: [null, [Validators.required, Validators.min(0)]],
       fecha_vencimiento: ['', [Validators.required, this.minDateValidator.bind(this)]],
@@ -37,9 +37,17 @@ export class FormProductoComponent {
       stock: [null, [Validators.required, Validators.min(0)]],
       promocion: [''],
       notas_adicionales: ['']
-
     });
+
+        // Escuchar cambios en el costo de adquisición y calcular el precio automáticamente
+    this.productForm.get('costo_adquisicion')?.valueChanges.subscribe(value => {
+      const calculatedPrice = value ? value * 1.3 : 0;
+      this.productForm.get('precio')?.setValue(calculatedPrice.toFixed(2), { emitEvent: false });
+    });
+  
   }
+
+  
 
   minDateValidator(control: AbstractControl): { [key: string]: boolean } | null {
     if (control.value && new Date(control.value) < new Date(this.currentDate)) {

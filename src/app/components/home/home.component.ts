@@ -38,5 +38,34 @@ export class HomeComponent {
     this.getProductos();
   }
 
+  deleteProducto(id: number) {
+    this._productoService.deleteProduct(id).subscribe(
+      (data: Producto) => {
+        // Manejar la respuesta exitosa aquí
+        console.log('Producto eliminado exitosamente:', data);
+        this.getProductos(); // Refrescar la lista de productos
+      },
+      (error: any) => {
+        // Manejar errores aquí
+        console.error('Error al eliminar el producto:', error);
+      }
+    );
 
+  // deleteProducto(id:number){
+  //   this._productoService.deleteProduct(id).subscribe(
+  //     (data: any) => {
+  //       console.log(data);
+  //       this.getProductos();
+  //     },
+  //     (error: any) => {
+  //       console.error('Error:', error);
+  //     }
+  //   )
+  // }
+
+  
+
+
+
+}
 }

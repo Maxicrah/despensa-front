@@ -17,6 +17,10 @@ export class ProductoService {
     return this._httpClient.get<Producto[]>(this.apiURL + 'traer');
   }
 
+  deleteProduct(id:number):Observable<Producto>{
+    return this._httpClient.delete<Producto>(this.apiURL + 'eliminar/' + id);
+  }
+
   // createProduct(product: Producto, file: File): Observable<any> {
   //   const formData = new FormData();
   //   formData.append('product', JSON.stringify(product));
